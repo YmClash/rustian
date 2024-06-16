@@ -33,18 +33,26 @@ fn main() {
 
     while runde < game {
         runde = runde+1;
+        println!("Rund :{}",runde);
         let  dice_1 = random();
         let dice_2 = random();
-        println!("{} :{} ",player_1 , dice_1 );
+        thread::sleep(Duration::from_secs(2));
+        println!("{} : Dice:{} ",player_1 , dice_1 );
         // let dice_1 = random();
         thread::sleep(Duration::from_secs(1));
-        println!("{} : {} ",player_2,dice_2);
+        println!("{} : Dice:{} ",player_2,dice_2);
         if dice_1 > dice_2 {
-            println!("{} Won this {}",player_1,runde);
-            score_1 = score_1+1
+            thread::sleep(Duration::from_secs(1));
+            println!("{} Won this {} rund",player_1,runde);
+            score_1 = score_1+1;
+            thread::sleep(Duration::from_secs(2));
+
         } else {
+            thread::sleep(Duration::from_secs(1));
             println!("{} Won This {}",player_2,runde);
             score_2 = score_2 + 1 ;
+            thread::sleep(Duration::from_secs(2));
+
 
         }
 
@@ -56,10 +64,14 @@ fn main() {
 
 
     if score_1 > score_2 {
-    println!("{} Won the Match",player_1)
+        thread::sleep(Duration::from_secs(2));
+
+        println!("{} Won the Match",player_1);
 
     } else {
-    println!("{} Won the match",player_2)
+        thread::sleep(Duration::from_secs(2));
+
+        println!("{} Won the match",player_2);
     }
 
 
@@ -81,15 +93,15 @@ fn main() {
     // println!("Taille: {}", player1.taille);
     // println!("Score:{}",player1.score);
 
-    println!();
+    println!("#######FIN DU JEUX#########");
     //println!("Random Number: {}",random())
 
 
-    for i in 1..runde {
-        println!("{} random numb ; {}",i,random());
-        thread::sleep(Duration::from_secs(1));
-
-    }
+    // for i in 1..runde {
+    //     println!("{} random numb ; {}",i,random());
+    //     thread::sleep(Duration::from_secs(1));
+    //
+    // }
 
 
 
@@ -112,7 +124,7 @@ fn input_numb() -> i32{
 
 fn random() -> i32 {
     let mut gen = thread_rng();
-    let random_numb = gen.gen_range(1..6);
+    let random_numb = gen.gen_range(0..6);
     return random_numb ;
 
 }
