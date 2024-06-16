@@ -1,0 +1,1 @@
+the gool of this repository is to learn Rust Stuff 
