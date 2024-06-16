@@ -19,6 +19,12 @@ fn main() {
     io::stdin().read_line(&mut taille).expect("Failed to read line");
     let taille: i32 = taille.trim().parse().expect("Please type a number!");
 
+    println!("Combien de nombre aléatoire voulez-vous ?");
+    let mut numb_inter = String::new();
+    io::stdin().read_line(&mut numb_inter).expect("Failed to read line");
+    let numb_inter: i32 = numb_inter.trim().parse().expect("Please type a number!");
+
+
 
 
     println!("Hello, world!");
@@ -29,7 +35,7 @@ fn main() {
     //println!("Random Number: {}",random())
 
 
-    for i in 1..3 {
+    for i in 1..numb_inter {
         println!("{} random numb ; {}",i,random());
         thread::sleep(Duration::from_secs(1));
 
