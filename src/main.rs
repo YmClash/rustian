@@ -30,6 +30,8 @@ fn main() {
     println!("Bienvenue a {} et {}",player_1,player_2);
     thread::sleep(Duration::from_secs(2));
     println!("On Commence ......");
+    thread::sleep(Duration::from_secs(5));
+
 
     while runde < game {
         runde = runde+1;
