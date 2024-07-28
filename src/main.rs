@@ -44,9 +44,9 @@ fn main() {
     println!("id:{}",joueur.id);
     println!("Score : {:?}",joueur.score);
 
-    for i in 0..numb_iteration{
+    for i in 1..numb_iteration + 1{
         let dee = random(1,6);
-        println!("{}Nombre genere : {}",i, dee);
+        println!("#{} Nombre genere : {}",i, dee);
         joueur.score.push(dee);
     }
 
