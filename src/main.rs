@@ -7,7 +7,7 @@ use ymcrust::{input, input_numb, random, pause,};
 
 
 #[derive(Debug)]
-enum Niveau {
+enum Level {
     Debutant,
     Intemediare,
     Expert,
@@ -18,7 +18,7 @@ struct Player {
     id : i32,
     score : Vec<i32>,
     xp : i32,
-    niveau: Niveau,
+    niveau: Level,
 }
 
 fn main() {
@@ -36,7 +36,7 @@ fn main() {
         id : random(1,10),
         score: Vec::new(),
         xp : 0,
-        niveau : Niveau::Debutant
+        niveau : Level::Debutant
     };
 
 
@@ -57,10 +57,13 @@ fn main() {
 
 
     if joueur.xp > 100 {
-        joueur.niveau = Niveau::Intemediare;
+        joueur.niveau = Level::Intemediare;
 
-    }else {
-        joueur.niveau = Niveau::Debutant;
+    } else if joueur.xp > 200 {
+        joueur.niveau = Level::Expert;
+
+    } else {
+        joueur.niveau = Level::Debutant;
 
     }
     pause(2);
