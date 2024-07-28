@@ -1,8 +1,8 @@
-use rand::{Rng, thread_rng};
-use std::thread;
-use std::time::Duration;
-use std::io;
-
+// use rand::{Rng, thread_rng};
+// use std::thread;
+// use std::time::Duration;
+// use std::io;
+use ymcrust::{input, input_numb, random, pause,};
 
 
 
@@ -22,16 +22,18 @@ struct Player {
 }
 
 fn main() {
+
+
     println!("Hallo World");
     println!("Veuillez entre le  numbre  d'iteratation ");
 
-    let  numb_iteration = input_numb();
+    let  numb_iteration = input_numb("Entrez le nombre d'iteration");
     println!("Nom du Joueur ?  ");
 
 
     let mut  joueur = Player{
-        nom : input(),
-        id : random(1),
+        nom : input("Entrez Nom du Joueur"),
+        id : random(1,10),
         score: Vec::new(),
         xp : 0,
         niveau : Niveau::Debutant
@@ -43,7 +45,7 @@ fn main() {
     println!("Score : {:?}",joueur.score);
 
     for i in 0..numb_iteration{
-        let dee = random(2);
+        let dee = random(1,6);
         println!("{}Nombre genere : {}",i, dee);
         joueur.score.push(dee);
     }
@@ -61,13 +63,13 @@ fn main() {
         joueur.niveau = Niveau::Debutant;
 
     }
-    pause();
+    pause(2);
 
     println!("Niveau : {:?}",joueur.niveau);
 
 
 
-
+////////****////////////////////
 
 
    //  println!("Player 2");
@@ -129,42 +131,54 @@ fn main() {
 
 }
 
+//
+//
+//
+//
+// fn input() -> String {
+//     // println!("enregistrer votre nom");
+//     let mut input = String::new();
+//     io::stdin().read_line(&mut input).expect("impossible");
+//     return input;
+// }
+//
+// fn input_numb() -> i32{
+//     let mut input_numb = String::new();
+//     io::stdin().read_line(&mut input_numb).expect("impossible");
+//     let input : i32 = input_numb.trim().parse().expect("Please type a number!");
+//     return input
+//
+// }
+//
+// fn random(factor:i32) -> i32 {
+//     if factor == 1 {
+//         let mut gen = thread_rng();
+//         let random = gen.gen_range(0..10);
+//         return random;
+//     }else if factor == 2 {
+//         let mut gen = thread_rng();
+//         let random = gen.gen_range(0..100);
+//         return random;
+//     }
+//     else {
+//         let mut gen = thread_rng();
+//         let random = gen.gen_range(0..1000);
+//         return random;
+//     }
+// }
+//
+// fn pause() {
+//     thread::sleep(Duration::from_secs(1));
 
-
-
-
-fn input() -> String {
-    // println!("enregistrer votre nom");
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("impossible");
-    return input;
-}
-
-fn input_numb() -> i32{
-    let mut input_numb = String::new();
-    io::stdin().read_line(&mut input_numb).expect("impossible");
-    let input : i32 = input_numb.trim().parse().expect("Please type a number!");
-    return input
-
-}
-
-fn random(factor:i32) -> i32 {
-    if factor == 1 {
-        let mut gen = thread_rng();
-        let random = gen.gen_range(0..10);
-        return random;
-    }else if factor == 2 {
-        let mut gen = thread_rng();
-        let random = gen.gen_range(0..100);
-        return random;
-    }
-    else {
-        let mut gen = thread_rng();
-        let random = gen.gen_range(0..1000);
-        return random;
-    }
-}
-
-fn pause() {
-    thread::sleep(Duration::from_secs(1));
-}
+// }
+//
+//
+//
+// fn rando(a:i32,b:i32) ->i32{
+//     let mut gen = thread_rng();
+//     if a == true{
+//         return 0;
+//     }
+//     let random = gen.gen_range(a..b);
+//     return random;
+// }
