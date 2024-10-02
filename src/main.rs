@@ -47,7 +47,7 @@ fn main() {
     for i in 1..numb_iteration + 1{
         let dee = random(1,6);
         println!("#{} Nombre genere : {}",i, dee);
-        joueur.score.push(dee);
+        joueur.score.push(dee) ;
     }
 
     println!("Score : {:?}",joueur.score);
