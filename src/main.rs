@@ -30,7 +30,8 @@ fn main() {
     let  numb_iteration = input_numb("Entrez le nombre d'iteration");
     println!("Nom du Joueur ?  ");
     println!("On vas teste le changement de nom de repertoire");
-    println!("Rename Recu");
+    println!("Rename Reussi");
+    println!("Rename Reussi");
 
 
     let mut  joueur = Player{
